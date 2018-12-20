@@ -40,10 +40,11 @@ make deploy
 
 ### Ce que j'ai testé sur le bpi:bit avec un firmware contruit depuis les sources et non celui fourni par bpi:bit
 Allumer/eteindre une led :
+```python
 >>> from machine import Pin
 >>> Pin(18, Pin.OUT).value(1)
 >>> Pin(18, Pin.OUT).value(0)
-allumer la matrice de led en croix :
+# allumer la matrice de led en croix :
 >>> np = NeoPixel(Pin(4), 25, bpp=3)
 >>> np[24] = (1, 0, 0)
 >>> np.write()
@@ -54,6 +55,7 @@ allumer la matrice de led en croix :
 >>> np.write()
 >>> np[12] = (1, 1, 0)
 >>> np.write()
+```
 Meme si les exemples concernent l'esp8266 ils fonctionnent également sur l'esp32 :
 http://docs.micropython.org/en/latest/esp8266/quickref.html#neopixel-driver
 

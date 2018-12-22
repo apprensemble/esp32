@@ -3,6 +3,8 @@ Quelques exemple d'utilisation esp32 - NB : le BPI:BIT est à base d'un mcu ESP3
 
 ## environement
 https://docs.espressif.com/projects/esp-idf/en/latest/get-started/linux-setup.html
+### spec BPI:BIT
+http://wiki.banana-pi.org/BPI-Bit
 
 ## micropython
 https://github.com/micropython/micropython
@@ -41,20 +43,23 @@ make deploy
 ### Ce que j'ai testé sur le bpi:bit avec un firmware contruit depuis les sources et non celui fourni par bpi:bit
 Allumer/eteindre une led :
 ```python
->>> from machine import Pin
->>> Pin(18, Pin.OUT).value(1)
->>> Pin(18, Pin.OUT).value(0)
+from machine import Pin
+Pin(18, Pin.OUT).value(1)
+Pin(18, Pin.OUT).value(0)
+
 # allumer la matrice de led en croix :
->>> np = NeoPixel(Pin(4), 25, bpp=3)
->>> np[24] = (1, 0, 0)
->>> np.write()
->>> np[0] = (1, 0, 0)
->>> np.write()
->>> np[4] = (1, 0, 0)
->>> np[20] = (1, 0, 0)
->>> np.write()
->>> np[12] = (1, 1, 0)
->>> np.write()
+from neopixel import NeoPixel
+Pin(2, Pin.OUT).value(1) #pour alimenter la matrice de led
+np = NeoPixel(Pin(4), 25, bpp=3)
+np[24] = (1, 0, 0)
+np.write()
+np[0] = (1, 0, 0)
+np.write()
+np[4] = (1, 0, 0)
+np[20] = (1, 0, 0)
+np.write()
+np[12] = (1, 1, 0)
+np.write()
 ```
 Meme si les exemples concernent l'esp8266 ils fonctionnent également sur l'esp32 :
 http://docs.micropython.org/en/latest/esp8266/quickref.html#neopixel-driver

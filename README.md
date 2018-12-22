@@ -60,6 +60,42 @@ np[20] = (1, 0, 0)
 np.write()
 np[12] = (1, 1, 0)
 np.write()
+
+# deplacement pixel avec les boutons
+#afin d'obtenir les bonnes indentations faire ctrl+E avant de coller dans le repl puis ctrl+D apres avoir coller
+from machine import Pin
+from neopixel import NeoPixel
+B = Pin(27, Pin.IN)
+A = Pin(35, Pin.IN)
+Pin(2, Pin.OUT).value(1) #pour alimenter la matrice de led
+np = NeoPixel(Pin(4), 25, bpp=3)
+x = 24
+np[x] = (1, 0, 0)
+np.write()
+def avance(p):
+  global x
+  np[x] = (0, 0, 0)
+  if x == 4:
+    x = 20
+  elif (x - 5) < 0:
+    x = x + 21
+  else:
+    x = x - 5
+  np[x] = (1, 0, 0)
+  np.write()
+def recule(p):
+  global x
+  np[x] = (0, 0, 0)
+  if x == 20:
+    x = 4
+  elif (x + 5) > 24:
+    x = x - 21 
+  else:
+    x = x + 5
+  np[x] = (1, 0, 0)
+  np.write()
+B.irq(trigger=Pin.IRQ_FALLING, handler=avance)
+A.irq(trigger=Pin.IRQ_FALLING, handler=recule)
 ```
 Meme si les exemples concernent l'esp8266 ils fonctionnent également sur l'esp32 :
 http://docs.micropython.org/en/latest/esp8266/quickref.html#neopixel-driver

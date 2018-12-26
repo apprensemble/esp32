@@ -1,8 +1,14 @@
-# esp32
-Quelques exemple d'utilisation esp32 - NB : le BPI:BIT est à base d'un mcu ESP32
+esp32
+=====
 
-## environement
+Quelques exemple d'utilisation esp32
+
+**NB** : le BPI:BIT est à base d'un mcu ESP32
+
+environement
+------------
 https://docs.espressif.com/projects/esp-idf/en/latest/get-started/linux-setup.html
+
 ### spec BPI:BIT
 http://wiki.banana-pi.org/BPI-Bit
 

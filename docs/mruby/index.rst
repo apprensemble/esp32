@@ -1,0 +1,6 @@
+mruby
+=====
+
+.. toctree::
+
+    mruby.rst

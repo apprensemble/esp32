@@ -1,7 +1,7 @@
-esp32
-=====
+Mycropython
+===========
 
-Quelques exemple d'utilisation esp32
+Micropython sur esp32
 
 **NB** : le BPI:BIT est à base d'un mcu ESP32
 

@@ -16,7 +16,7 @@ Compilation
 J'ai pu compiler la dernière version de mruby en suivant exactement la même procedure qu'indiquée.
 mruby-esp32 est preparée pour mruby 1.4.1 je l'ai fait fonctionner sans problème avec mruby 2.0.0.
 
-**Avant compilation S'assurer que `esp-idf`_ est bien installer et dans le path**
+**Avant compilation S'assurer que** `esp-idf`_ **est bien installer et dans le path**
 
 .. code-block:: shell
 

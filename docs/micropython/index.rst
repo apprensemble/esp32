@@ -1,4 +1,4 @@
-Installation micropython
+Micropython
 ========================
 
 .. toctree::

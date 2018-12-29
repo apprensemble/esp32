@@ -14,7 +14,7 @@ Compilation
 ===========
 
 J'ai pu compiler la dernière version de mruby en suivant exactement la même procedure qu'indiquée.
-mruby-esp32 a preparée pour mruby 1.4.1 je l'ai fait fonctionner sans problème avec mruby 2.0.0.
+mruby-esp32 est preparée pour mruby 1.4.1 je l'ai fait fonctionner sans problème avec mruby 2.0.0.
 
 **Avant compilation S'assurer que `esp-idf`_ est bien installer et dans le path**
 
@@ -42,7 +42,7 @@ Si cela fonctionne vous devriez voir un prompt :
     # faire un calcul
     1+1
     
-Si cela fonctionne vous pouvez ensuite ajouter des fonctionnalités tel que la gestion des ports `gpio`_, la `memoire`_, le `wifi`_, l'`i2c`_ etc...
+Si cela fonctionne vous pouvez ensuite ajouter des fonctionnalités tel que la gestion des ports `gpio`_, la `memoire`_, le `wifi`_, l'`i2c`_, `etc`_.
 
 
 
@@ -54,4 +54,5 @@ Si cela fonctionne vous pouvez ensuite ajouter des fonctionnalités tel que la g
 .. _memoire: https://github.com/mruby-esp32/mruby-esp32-system
 .. _wifi: https://github.com/mruby-esp32/mruby-esp32-wifi
 .. _i2c: https://github.com/mruby-esp32/mruby-esp32-i2c
+.. _etc: https://github.com/mruby-esp32
 .. _esp-idf: https://docs.espressif.com/projects/esp-idf/en/latest/get-started/index.html

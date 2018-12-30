@@ -110,3 +110,5 @@ ou
 https://github.com/darrenpmeyer/Arduino-FireBoard/blob/master/FireBoard.ino
 
 par exemple...
+
+La librairie FastLED https://github.com/FastLED/FastLED/releases qui remplacerait avantageusement celle d'ADAFRUIT https://github.com/adafruit/Adafruit_NeoPixel  d'après un gars sur le site AdaFruit https://learn.adafruit.com/adafruit-neopixel-uberguide/advanced-coding

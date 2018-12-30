@@ -100,3 +100,13 @@ A.irq(trigger=Pin.IRQ_FALLING, handler=recule)
 Meme si les exemples concernent l'esp8266 ils fonctionnent également sur l'esp32 :
 http://docs.micropython.org/en/latest/esp8266/quickref.html#neopixel-driver
 
+
+Serait-il possible d'essayer de reproduire un effet de flames sur le BPI:BIT en microPhyton ?
+Peut-être en s'inspirant d'un code arduino que j'ai trouvé :
+https://github.com/giladaya/arduino-led-matrix/blob/master/fire/fire.ino
+
+ou
+
+https://github.com/darrenpmeyer/Arduino-FireBoard/blob/master/FireBoard.ino
+
+par exemple...

@@ -8,6 +8,7 @@ References
 
 * project original : `mruby`_.
 * projet pour esp32 : `mruby-esp32`_.
+* projet mirb pour esp-32 : `mruby-irb`_.
   
 
 Compilation
@@ -50,6 +51,7 @@ Si cela fonctionne vous pouvez ensuite ajouter des fonctionnalités tel que la g
 
 .. _mruby: https://github.com/mruby/mruby
 .. _mruby-esp32: https://github.com/mruby-esp32
+.. _mruby-irb: https://github.com/apprensemble/mruby-esp32-app-mirb
 .. _gpio: https://github.com/mruby-esp32/mruby-esp32-gpio
 .. _memoire: https://github.com/mruby-esp32/mruby-esp32-system
 .. _wifi: https://github.com/mruby-esp32/mruby-esp32-wifi

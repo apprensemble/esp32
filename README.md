@@ -1,8 +1,14 @@
 # esp32
 Quelques exemple d'utilisation esp32 - NB : le BPI:BIT est à base d'un mcu ESP32
 
-## environement
+## Qu'est-ce que l'esp32
+
+L'esp32 est un microcontrolleur puissant très ouvert et ultrapopulaire.
+
+## Specifications
+
 https://docs.espressif.com/projects/esp-idf/en/latest/get-started/linux-setup.html
+
 ### spec BPI:BIT
 http://wiki.banana-pi.org/BPI-Bit
 
@@ -11,100 +17,30 @@ http://wiki.banana-pi.org/BPI-Bit
 C'est l'inverse de l'article suivant : https://projetsdiy.fr/deballage-clone-wemos-esp32-lolin-ecran-oled-monochrome-ssd1306/
 
 
-## micropython
-https://github.com/micropython/micropython
-http://docs.micropython.org/en/latest/library/machine.Pin.html
+## Objectifs
 
-### Il suffit de suivre la doc micropython sur github
-```
-git clone git@github.com:micropython/micropython.git
-cd micropython
-git submodule update --init
-cd ports/esp32
-make deplibs
-make
-make erase
-make deploy
-# on lance le repl
-screen /dev/ttyUSB0 115200
-```
+Donner une vue générale des possibilités offertes par l'esp32 et aider à commencer un projet dans le langage de son choix.
+Chaque démarage dans un langage sera accompagné d'exemples documentés en français. Pour le moment j'ai commencé micropython et mruby. L'objectif est de couvrir tout les langages que je cite.
 
-#### NB
-Vous aurez certainement un message concernant la version du hash git de l'esp-idf (build chain)
-il faudra aller dans votre rep esp-idf et faire : 
-```
-git checkout numero_de_hash
-git submodule update
-cd - # pour retourner dans le rep du ports/esp32 de micropython
-#ensuite on rebuild
-make clean
-make deplibs
-make
-make erase
-make deploy
-# et on lance screen pour afficher le repl
-```
+## Langages abordés :
 
-### Ce que j'ai testé sur le bpi:bit avec un firmware contruit depuis les sources et non celui fourni par bpi:bit
-Allumer/eteindre une led :
-```python
-from machine import Pin
-Pin(18, Pin.OUT).value(1)
-Pin(18, Pin.OUT).value(0)
+### Partiellement disponible :
 
-# allumer la matrice de led en croix :
-from neopixel import NeoPixel
-Pin(2, Pin.OUT).value(1) #pour alimenter la matrice de led
-np = NeoPixel(Pin(4), 25, bpp=3)
-np[24] = (1, 0, 0)
-np.write()
-np[0] = (1, 0, 0)
-np.write()
-np[4] = (1, 0, 0)
-np[20] = (1, 0, 0)
-np.write()
-np[12] = (1, 1, 0)
-np.write()
+* [micropython](https://esp32-fr.readthedocs.io/fr/latest/micropython/micropython.html)
+* [mruby](https://esp32-fr.readthedocs.io/fr/latest/mruby/mruby.html)
 
-# deplacement pixel avec les boutons
-#afin d'obtenir les bonnes indentations faire ctrl+E avant de coller dans le repl puis ctrl+D apres avoir coller
-from machine import Pin
-from neopixel import NeoPixel
-B = Pin(27, Pin.IN)
-A = Pin(35, Pin.IN)
-Pin(2, Pin.OUT).value(1) #pour alimenter la matrice de led
-np = NeoPixel(Pin(4), 25, bpp=3)
-x = 24
-np[x] = (1, 0, 0)
-np.write()
-def avance(p):
-  global x
-  np[x] = (0, 0, 0)
-  if x == 4:
-    x = 20
-  elif (x - 5) < 0:
-    x = x + 21
-  else:
-    x = x - 5
-  np[x] = (1, 0, 0)
-  np.write()
-def recule(p):
-  global x
-  np[x] = (0, 0, 0)
-  if x == 20:
-    x = 4
-  elif (x + 5) > 24:
-    x = x - 21 
-  else:
-    x = x + 5
-  np[x] = (1, 0, 0)
-  np.write()
-B.irq(trigger=Pin.IRQ_FALLING, handler=avance)
-A.irq(trigger=Pin.IRQ_FALLING, handler=recule)
-```
-Meme si les exemples concernent l'esp8266 ils fonctionnent également sur l'esp32 :
-http://docs.micropython.org/en/latest/esp8266/quickref.html#neopixel-driver
+### Pas encore commencé :
 
+* [freertos](https://docs.espressif.com/projects/esp-idf/en/latest/get-started/linux-setup.html)
+* [arduino IDE](https://github.com/espressif/arduino-esp32)
+* [tinyGo](https://github.com/aykevl/tinygo)
+* ~~[HaikuVM](http://haiku-vm.sourceforge.net/)~~ ne fonctionne pas encore sur esp32
+* [javascript](http://www.espruino.com/ESP32)
+* [lua](https://nodemcu.readthedocs.io/en/dev-esp32/en/build/)
+* ...
+
+
+### Idées de projets (cassiope34) :
 
 Serait-il possible d'essayer de reproduire un effet de flames sur le BPI:BIT en microPhyton ?
 Peut-être en s'inspirant d'un code arduino que j'ai trouvé :

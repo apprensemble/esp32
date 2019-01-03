@@ -6,6 +6,11 @@ https://docs.espressif.com/projects/esp-idf/en/latest/get-started/linux-setup.ht
 ### spec BPI:BIT
 http://wiki.banana-pi.org/BPI-Bit
 
+### spec esp32 lolin avec ssd1306
+**NB: sur ma carte le SDA est sur le pin 5 et le SCL sur le pin 4.**
+C'est l'inverse de l'article suivant : https://projetsdiy.fr/deballage-clone-wemos-esp32-lolin-ecran-oled-monochrome-ssd1306/
+
+
 ## micropython
 https://github.com/micropython/micropython
 http://docs.micropython.org/en/latest/library/machine.Pin.html

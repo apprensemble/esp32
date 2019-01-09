@@ -49,6 +49,7 @@ https://github.com/giladaya/arduino-led-matrix/blob/master/fire/fire.ino
 ou
 
 https://github.com/darrenpmeyer/Arduino-FireBoard/blob/master/FireBoard.ino
+(exemple micropython : https://gist.github.com/aykevl/0b4031c95575a4674772216e4b0f3b64)
 
 par exemple...
 
